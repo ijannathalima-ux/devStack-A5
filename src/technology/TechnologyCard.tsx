@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import type { TechnologyType } from "../type";
+import Stack from "./Stack";
 
 interface TechnologyCardProps {
     technologies: TechnologyType[];
@@ -8,9 +9,9 @@ interface TechnologyCardProps {
 const TechnologyCard = ({ technologies }: TechnologyCardProps) => {
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-12 container mx-auto px-4 py-8 gap-9">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="col-span-8 gap-6 grid grid-cols-3 ">
 
                 {technologies.map((technology) => (
                     <div
@@ -55,6 +56,10 @@ const TechnologyCard = ({ technologies }: TechnologyCardProps) => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className="col-span-4">
+                <Stack/>
             </div>
         </div>
     );
