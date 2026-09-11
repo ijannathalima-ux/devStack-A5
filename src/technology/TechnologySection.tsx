@@ -9,7 +9,7 @@ interface TechnologyProps {
 }
 
 
-const TechnologySection = ({technologiesDataPromise}: TechnologyProps) => {
+const TechnologySection = ({ technologiesDataPromise }: TechnologyProps) => {
 
     const technologies = use(technologiesDataPromise)
 
@@ -17,13 +17,13 @@ const TechnologySection = ({technologiesDataPromise}: TechnologyProps) => {
 
     return (
         <div>
-            <div>
-                <h2 >Explore the Technologies</h2>
-                <p>Pick one technology per category to build your ideal stack.</p>
+            <div className="container mx-auto">
+                <h2 className="text-4xl font-bold mb-4">Explore the <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Technologies</span></h2>
+                <p className="text-[#64748B]">Pick one technology per category to build your ideal stack.</p>
             </div>
 
 
-          <TechnologyCard technologies={technologies}></TechnologyCard>
+            <TechnologyCard technologies={technologies}></TechnologyCard>
         </div>
     );
 };
