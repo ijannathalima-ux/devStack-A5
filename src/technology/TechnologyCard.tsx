@@ -11,7 +11,7 @@ const TechnologyCard = ({ technologies }: TechnologyCardProps) => {
     return (
         <div className="grid grid-cols-12 container mx-auto px-4 py-8 gap-9">
 
-            <div className="col-span-8 gap-6 grid grid-cols-3 ">
+            <div className="col-span-9 gap-6 grid grid-cols-3 ">
 
                 {technologies.map((technology) => (
                     <div
@@ -58,7 +58,7 @@ const TechnologyCard = ({ technologies }: TechnologyCardProps) => {
                 ))}
             </div>
 
-            <div className="col-span-4">
+            <div className="col-span-3">
                 <Stack/>
             </div>
         </div>
