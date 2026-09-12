@@ -1,8 +1,9 @@
 import BannerImage from "../assets/banner-stack.png"
 
 const Hero = () => {
+
     return (
-        <div className="flex justify-between items-center gap-5 container mx-auto py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 container mx-auto py-8 px-4">
             <div>
                 <h1 className="text-6xl font-bold mb-5">Build Your Ideal <br></br>
                     <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">

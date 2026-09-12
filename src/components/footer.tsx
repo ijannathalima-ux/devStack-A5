@@ -2,9 +2,9 @@ import FooterLogo from "../assets/logo-text.png"
 
 const Footer = () => {
     return (
-        <div className="container mx-auto p-8">
+        <div className="container mx-auto p-16">
 
-            <div className="flex justify-between gap-4 border-b border-gray-200 mb-8">
+            <div className="flex flex-col md:flex-row justify-between gap-8 border-b border-gray-200 mb-8">
 
                 {/* devStack logo */}
                 <div>

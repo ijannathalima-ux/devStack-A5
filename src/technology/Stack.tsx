@@ -6,7 +6,7 @@ interface StackProps {
     setSelectedTechnologies: React.Dispatch<React.SetStateAction<TechnologyType[]>>;
 }
 
-const Stack = ({selectedTechnologies,setSelectedTechnologies}: StackProps) => {
+const Stack = ({ selectedTechnologies, setSelectedTechnologies }: StackProps) => {
 
     const handleRemove = (technologyName: string) => {
 
@@ -40,7 +40,7 @@ const Stack = ({selectedTechnologies,setSelectedTechnologies}: StackProps) => {
 
                             <div className="flex items-center gap-3">
 
-                                <img src={technology.icon} alt="" className="w-8 h-8"/>
+                                <img src={technology.icon} alt="" className="w-8 h-8" />
 
                                 <span>{technology.name}</span>
 
@@ -57,12 +57,12 @@ const Stack = ({selectedTechnologies,setSelectedTechnologies}: StackProps) => {
 
                     ))}
 
-
-                    {selectedTechnologies.length > 0 &&(
+                    {/* Remove all btn */}
+                    {selectedTechnologies.length > 0 && (
                         <button onClick={handleRemoveAll}
-                        className="w-full mt-4 border border-red-300 font-medium text-red-500 py-3 px-5 rounded-xl cursor-pointer"
+                            className="w-full mt-4 border border-red-300 font-medium text-red-500 py-3 px-5 rounded-xl cursor-pointer"
                         >
-                         Romove All
+                            Remove All
                         </button>
                     )}
 

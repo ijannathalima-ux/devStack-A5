@@ -8,14 +8,16 @@ const Navbar = () => {
             <div className="flex items-center gap-3 md:justify-between md:gap-5 container mx-auto py-7 px-4">
 
 
-                {/* hamburger */}
+                {/* mobile: hamburger */}
                 <button className="md:hidden cursor-pointer">
                     <RxHamburgerMenu size={28} />
                 </button>
 
-
+                {/* nav logo */}
                 <img src={NavbarLogo} alt="Navbar Logo" className="h-10"></img>
 
+
+                {/* nav menu */}
                 <ul className="hidden md:flex justify-between items-center gap-5 text-[#475569] font-semibold cursor-pointer">
 
                     <li><a href="/"><span className="text-[#DB2777]">Home</span></a></li>
@@ -26,6 +28,7 @@ const Navbar = () => {
 
                 </ul>
 
+                {/* navbar button */}
                 <div className="flex gap-3 font-semibold">
                     <button className=" py-2 px-5 rounded-2xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition-transform duration-200">Sign In</button>
                     <button className="bg-[#D91B7E] text-white py-2 px-5 rounded-2xl cursor-pointer hover:bg-pink-500 hover:scale-105 transition-transform duration-200">Sign Up</button>

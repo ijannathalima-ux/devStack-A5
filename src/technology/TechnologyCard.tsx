@@ -32,12 +32,13 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
         <div className="border-b border-gray-200 mb-6">
             <div className="grid grid-cols-12 container mx-auto px-4 py-8 gap-9">
 
-                <div className="col-span-9 gap-6 grid grid-cols-3">
+                {/* technologies card */}
+                <div className="col-span-12 lg:col-span-9 gap-6 grid grid-cols-1 lg:grid-cols-3">
 
                     {technologies.map((technology) => {
 
                         const isSelected = selectedTechnologies.some(
-                            (item) => item.name === technology.name
+                            (item) => item.id === technology.id
                         );
 
                         return (
@@ -50,6 +51,7 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
 
                                     <div className="flex justify-between items-start mb-4">
 
+                                        {/* technologies icon */}
                                         <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gray-50">
                                             <img
                                                 src={technology.icon}
@@ -58,16 +60,19 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
                                             />
                                         </div>
 
+                                        {/* technologies badge */}
                                         <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#E0F2FE] text-[#0EA5E9] border border-[#0EA5E9]">
                                             {technology.badge}
                                         </span>
 
                                     </div>
 
+                                    {/* technologies name */}
                                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                                         {technology.name}
                                     </h3>
 
+                                    {/* technologies description */}
                                     <p className="text-sm text-gray-500 leading-relaxed mb-6 line-clamp-3">
                                         {technology.description}
                                     </p>
@@ -80,10 +85,12 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
 
                                         <div className="flex gap-2">
 
+                                            {/* technologies category */}
                                             <span className="bg-gray-100 px-2.5 py-1 rounded-md">
                                                 {technology.category}
                                             </span>
 
+                                            {/* technologies difficulty */}
                                             <span className="bg-gray-100 px-2.5 py-1 rounded-md">
                                                 {technology.difficulty}
                                             </span>
@@ -92,6 +99,8 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
 
                                         <div className="flex items-center gap-1 text-gray-800">
                                             <FaStar className="text-amber-400" />
+
+                                            {/* technologies rating */}
                                             <span className="font-bold">
                                                 {technology.rating}
                                             </span>
@@ -106,8 +115,11 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
                                     <button
                                         onClick={() => handleAddToStack(technology)}
                                         disabled={isSelected}
-                                        className="w-full bg-[#0A0F1D] text-white py-3 rounded-xl font-semibold text-sm transition-colors cursor-pointer ">
-                                        {isSelected ? "Selected" : "Add to Stack"}
+                                        className={`w-full py-3 rounded-xl font-semibold text-sm transition-colors ${isSelected
+                                                ? " border border-[#0EA5E9] bg-[#E0F2FE] text-[#0EA5E9] cursor-not-allowed" : "bg-[#0A0F1D] text-white cursor-pointer"
+
+                                            }`}>
+                                        {isSelected ? "✓ Added to Stack" : "Add to Stack"}
                                     </button>
 
                                 </div>
@@ -118,7 +130,8 @@ const TechnologyCard = ({ technologies, selectedTechnologies, setSelectedTechnol
 
                 </div>
 
-                <div className="col-span-3">
+                {/* stack card */}
+                <div className="col-span-12 lg:col-span-3 ">
                     <Stack
                         selectedTechnologies={selectedTechnologies}
                         setSelectedTechnologies={setSelectedTechnologies}
