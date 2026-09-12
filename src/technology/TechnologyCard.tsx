@@ -8,17 +8,14 @@ interface TechnologyCardProps {
     setSelectedTechnologies: React.Dispatch<React.SetStateAction<TechnologyType[]>>;
 }
 
-const TechnologyCard = ({
-    technologies,
-    selectedTechnologies,
-    setSelectedTechnologies
-}: TechnologyCardProps) => {
+const TechnologyCard = ({technologies,selectedTechnologies,setSelectedTechnologies}: TechnologyCardProps) => {
 
     const handleAddToStack = (technology: TechnologyType) => {
         setSelectedTechnologies([...selectedTechnologies, technology]);
     };
 
     return (
+        <div className="border-b border-gray-200 mb-6">
         <div className="grid grid-cols-12 container mx-auto px-4 py-8 gap-9">
 
             <div className="col-span-9 gap-6 grid grid-cols-3">
@@ -95,8 +92,7 @@ const TechnologyCard = ({
                                 <button
                                     onClick={() => handleAddToStack(technology)}
                                     disabled={isSelected}
-                                    className="w-full bg-[#0A0F1D] text-white py-3 rounded-xl font-semibold text-sm hover:bg-[#151f79] transition-colors cursor-pointer"
-                                >
+                                    className="w-full bg-[#0A0F1D] text-white py-3 rounded-xl font-semibold text-sm hover:bg-[#151f79] transition-colors cursor-pointer ">
                                     {isSelected ? "Selected" : "Add to Stack"}
                                 </button>
 
@@ -116,6 +112,7 @@ const TechnologyCard = ({
             </div>
 
         </div>
+    </div>
     );
 };
 

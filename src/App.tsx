@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import type { TechnologyType } from "./type";
 import TechnologySection from "./technology/TechnologySection";
+import Footer from "./components/footer";
 
 
 const technologiesDataPromise = async():Promise<TechnologyType[]> => {
@@ -23,6 +24,7 @@ function App() {
       <Suspense fallback={<span className="loading loading-spinner loading-xs"></span>}>
         <TechnologySection technologiesDataPromise ={technologiesDataPromise()} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies}></TechnologySection>
       </Suspense>
+      <Footer></Footer>
     </>
   )
 }

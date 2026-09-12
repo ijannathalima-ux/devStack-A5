@@ -1,3 +1,4 @@
+import { MdDelete } from "react-icons/md";
 import type { TechnologyType } from "../type";
 
 interface StackProps {
@@ -5,10 +6,7 @@ interface StackProps {
     setSelectedTechnologies: React.Dispatch<React.SetStateAction<TechnologyType[]>>;
 }
 
-const Stack = ({
-    selectedTechnologies,
-    setSelectedTechnologies
-}: StackProps) => {
+const Stack = ({selectedTechnologies,setSelectedTechnologies}: StackProps) => {
 
     const handleRemove = (technologyName: string) => {
 
@@ -28,38 +26,27 @@ const Stack = ({
                     Your Stack
                 </h2>
 
-                <p className="text-[#94A3B8] text-[19px]">
-                    {selectedTechnologies.length} technologies selected.
-                </p>
+                <p className="text-[#94A3B8] text-[19px]">{selectedTechnologies.length} technologies selected.</p>
 
                 <div className="bg-white p-4">
 
                     {selectedTechnologies.map((technology) => (
 
-                        <div
-                            key={technology.name}
-                            className="flex items-center justify-between border-b py-3"
-                        >
+                        <div key={technology.name} className="flex items-center justify-between border-b py-3">
 
                             <div className="flex items-center gap-3">
 
-                                <img
-                                    src={technology.icon}
-                                    alt=""
-                                    className="w-8 h-8"
-                                />
+                                <img src={technology.icon} alt="" className="w-8 h-8"/>
 
-                                <span>
-                                    {technology.name}
-                                </span>
+                                <span>{technology.name}</span>
 
                             </div>
 
                             <button
                                 onClick={() => handleRemove(technology.name)}
-                                className="text-red-500 cursor-pointer"
-                            >
-                                Remove
+                                className="text-red-700 cursor-pointer">
+                                    
+                                <MdDelete />
                             </button>
 
                         </div>
