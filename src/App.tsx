@@ -1,8 +1,8 @@
-import { Suspense } from "react"
-import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
-import TechnologySection from "./technology/TechnologySection"
-import type { TechnologyType } from "./type"
+import { Suspense,useState } from "react";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import type { TechnologyType } from "./type";
+import TechnologySection from "./technology/TechnologySection";
 
 
 const technologiesDataPromise = async():Promise<TechnologyType[]> => {
@@ -12,17 +12,19 @@ const technologiesDataPromise = async():Promise<TechnologyType[]> => {
 }
 
 function App() {
-  
+
+  const [selectedTechnologies, setSelectedTechnologies] =
+    useState<TechnologyType[]>([])
 
   return (
     <>
       <Navbar></Navbar>
       <Hero></Hero>
       <Suspense fallback={<span className="loading loading-spinner loading-xs"></span>}>
-        <TechnologySection technologiesDataPromise={technologiesDataPromise()}></TechnologySection>
+        <TechnologySection technologiesDataPromise ={technologiesDataPromise()} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies}></TechnologySection>
       </Suspense>
     </>
   )
 }
 
-export default App
+export default App;

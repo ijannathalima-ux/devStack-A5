@@ -2,28 +2,42 @@ import { use } from "react";
 import type { TechnologyType } from "../type";
 import TechnologyCard from "./TechnologyCard";
 
-
-
 interface TechnologyProps {
-    technologiesDataPromise: Promise<TechnologyType[]>
+    technologiesDataPromise: Promise<TechnologyType[]>;
+    selectedTechnologies: TechnologyType[];
+    setSelectedTechnologies: React.Dispatch<React.SetStateAction<TechnologyType[]>>;
 }
 
+const TechnologySection = ({technologiesDataPromise,selectedTechnologies,setSelectedTechnologies}: TechnologyProps) => {
 
-const TechnologySection = ({ technologiesDataPromise }: TechnologyProps) => {
+    const technologies = use(technologiesDataPromise);
 
-    const technologies = use(technologiesDataPromise)
-
-    console.log(technologies)
+    console.log(technologies);
 
     return (
         <div>
+
             <div className="container mx-auto">
-                <h2 className="text-4xl font-bold mb-4">Explore the <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Technologies</span></h2>
-                <p className="text-[#64748B] text-[19px] font-medium">Pick one technology per category to build your ideal stack.</p>
+
+                <h2 className="text-4xl font-bold mb-4">
+                    Explore the{" "}
+                    <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        Technologies
+                    </span>
+                </h2>
+
+                <p className="text-[#64748B] text-[19px] font-medium">
+                    Pick one technology per category to build your ideal stack.
+                </p>
+
             </div>
 
+            <TechnologyCard
+                technologies={technologies}
+                selectedTechnologies={selectedTechnologies}
+                setSelectedTechnologies={setSelectedTechnologies}
+            />
 
-            <TechnologyCard technologies={technologies}></TechnologyCard>
         </div>
     );
 };
