@@ -17,6 +17,10 @@ const Stack = ({selectedTechnologies,setSelectedTechnologies}: StackProps) => {
         setSelectedTechnologies(remainingTechnologies);
     };
 
+    const handleRemoveAll = () => {
+        setSelectedTechnologies([])
+    };
+
     return (
         <div className="container mx-auto border border-[#e9eef4] p-5 rounded-2xl">
 
@@ -45,13 +49,22 @@ const Stack = ({selectedTechnologies,setSelectedTechnologies}: StackProps) => {
                             <button
                                 onClick={() => handleRemove(technology.name)}
                                 className="text-red-700 cursor-pointer">
-                                    
+
                                 <MdDelete />
                             </button>
 
                         </div>
 
                     ))}
+
+
+                    {selectedTechnologies.length > 0 &&(
+                        <button onClick={handleRemoveAll}
+                        className="w-full mt-4 border border-red-300 font-medium text-red-500 py-3 px-5 rounded-xl cursor-pointer"
+                        >
+                         Romove All
+                        </button>
+                    )}
 
                     {selectedTechnologies.length === 0 && (
                         <button className="w-full h-15 rounded-2xl btn btn-dash">
