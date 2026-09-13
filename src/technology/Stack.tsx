@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import type { TechnologyType } from "../type";
 import { RiDeleteBack2Fill } from "react-icons/ri";
 
@@ -19,6 +20,7 @@ const Stack = ({ selectedTechnologies, setSelectedTechnologies }: StackProps) =>
 
     const handleRemoveAll = () => {
         setSelectedTechnologies([])
+    toast.info("All technologies removed!")
     };
 
     return (
