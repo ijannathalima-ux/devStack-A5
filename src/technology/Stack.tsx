@@ -1,5 +1,5 @@
-import { MdDelete } from "react-icons/md";
 import type { TechnologyType } from "../type";
+import { RiDeleteBack2Fill } from "react-icons/ri";
 
 interface StackProps {
     selectedTechnologies: TechnologyType[];
@@ -30,13 +30,22 @@ const Stack = ({ selectedTechnologies, setSelectedTechnologies }: StackProps) =>
                     Your Stack
                 </h2>
 
-                <p className="text-[#94A3B8] text-[19px]">{selectedTechnologies.length} technologies selected.</p>
+                {selectedTechnologies.length === 0 ?
+                    (<p className="text-[#94A3B8] text-[15px] mb-4">
+                        No technologies selected yet.
+                    </p>
+
+                    ) : (
+                        <p className="text-[#94A3B8] text-[15px]">
+                            {selectedTechnologies.length} Technology Selected
+                        </p>
+                    )}
 
                 <div className="bg-white p-4">
 
                     {selectedTechnologies.map((technology) => (
 
-                        <div key={technology.name} className="flex items-center justify-between border-b py-3">
+                        <div key={technology.name} className="flex items-center justify-between border border-gray-300 mb-4 rounded-2xl px-3 py-3">
 
                             <div className="flex items-center gap-3">
 
@@ -48,9 +57,9 @@ const Stack = ({ selectedTechnologies, setSelectedTechnologies }: StackProps) =>
 
                             <button
                                 onClick={() => handleRemove(technology.name)}
-                                className="text-red-700 cursor-pointer">
+                                className="hover:text-red-800 cursor-pointer">
 
-                                <MdDelete />
+                                <RiDeleteBack2Fill />
                             </button>
 
                         </div>
@@ -67,7 +76,7 @@ const Stack = ({ selectedTechnologies, setSelectedTechnologies }: StackProps) =>
                     )}
 
                     {selectedTechnologies.length === 0 && (
-                        <button className="w-full h-15 rounded-2xl btn btn-dash">
+                        <button className="w-full h-15 text-[##94A3B8] rounded-2xl btn btn-dash">
                             Your stack is empty.
                         </button>
                     )}

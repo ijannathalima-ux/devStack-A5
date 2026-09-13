@@ -12,14 +12,14 @@ const Footer = () => {
                     <p className="text-[#64748B] mb-4">Curated tools, technologies, and resources for developers building
                         modern software.</p>
                     <ul className="flex gap-5 text-[#475569] mb-8 font-medium">
-                        <li className=" hover:text-blue-600"><a href="/">Github</a></li>
+                        <li className=" hover:text-blue-600"><a href="/">GitHub</a></li>
                         <li className=" hover:text-blue-600"><a href="/">Twitter</a></li>
-                        <li className=" hover:text-blue-600"><a href="/">Linkdin</a></li>
+                        <li className=" hover:text-blue-600"><a href="/">LinkdIn</a></li>
                     </ul>
                 </div>
 
                 {/* product */}
-                <div>
+                <div className="hidden md:block">
                     <h2 className="text-xl font-semibold mb-3">PRODUCT</h2>
                     <ul className="text-[#64748B]">
                         <li className=" hover:text-blue-600"><a href="/">Home</a></li>
@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
 
                 {/*Company */}
-                <div>
+                <div className="hidden md:block">
                     <h2 className="text-xl font-semibold mb-3">COMPANY</h2>
                     <ul className="text-[#64748B]">
                         <li className=" hover:text-blue-600"><a href="/">About</a></li>
@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
 
                 {/* Legal */}
-                <div>
+                <div className="hidden md:block">
                     <h2 className="text-xl font-semibold mb-3">LEGAL</h2>
                     <ul className="text-[#64748B]">
                         <li className=" hover:text-blue-600"><a href="/">Privacy Policy</a></li>
