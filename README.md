@@ -190,4 +190,4 @@ public/
 
 **Israt Jannat Halima**
 
-Built with React, TypeScript, Tailwind CSS, DaisyUI, React-Toastify, React Icons, and Vite. meaning bangla
+Built with React, TypeScript, Tailwind CSS, DaisyUI, React-Toastify, React Icons, and Vite.
